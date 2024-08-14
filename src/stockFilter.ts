@@ -1,8 +1,8 @@
-import csv from 'csv-parser';
-import fs from 'fs/promises';
-import { createReadStream } from 'fs';
-import { createObjectCsvWriter } from 'csv-writer';
-import path from 'path';
+const csv = require('csv-parser');
+const fs = require('fs').promises;
+const { createReadStream } = require('fs');
+const { createObjectCsvWriter } = require('csv-writer');
+const path = require('path');
 
 interface Stock {
   Symbol: string;

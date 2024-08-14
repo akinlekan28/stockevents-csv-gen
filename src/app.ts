@@ -1,15 +1,17 @@
-import express from 'express';
-import { filterStocks, generateAllDataCSV } from './stockFilter';
-import { config } from 'dotenv';
-import path from 'path';
-config(); // Load environment variables
+const express = require('express');
+import { Request, Response } from 'express'; 
+const { filterStocks, generateAllDataCSV } = require('./stockFilter');
+const dotenv = require('dotenv');
+const path = require('path');
+
+dotenv.config(); // Load environment variables
 
 const app = express();
 const port = process.env.PORT || 6000;
 
 app.use(express.json());
 
-app.get('/api', async (req, res) => {
+app.get('/api', async (req: Request, res: Response) => {
   try {
     return res.json({ message: 'Hello, world!' });
   } catch (error) {
@@ -21,7 +23,7 @@ app.get('/api', async (req, res) => {
 // Serve static files from the 'downloads' directory
 app.use('/downloads', express.static(path.join(__dirname, '..', 'downloads')));
 
-app.post('/api/generate-csv', async (req, res) => {
+app.post('/api/generate-csv', async (req: Request, res: Response) => {
   try {
     const { allDataFile } = req.body;
 
@@ -45,7 +47,7 @@ app.post('/api/generate-csv', async (req, res) => {
   }
 });
 
-app.post('/api/filter-stocks', async (req, res) => {
+app.post('/api/filter-stocks', async (req: Request, res: Response) => {
   try {
     const { allDataFile, pieFile, outputFile } = req.body;
 
