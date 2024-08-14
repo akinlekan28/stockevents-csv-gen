@@ -9,7 +9,7 @@ dotenv.config(); // Load environment variables
 const app = express();
 const port = process.env.PORT || 6000;
 
-app.use(express.json());
+app.use(express.json()); 
 
 app.get('/api', async (req: Request, res: Response) => {
   try {
