@@ -1,0 +1,27 @@
+{
+  "name": "stockevents-csv-gen",
+  "version": "1.0.0",
+  "description": "Stockevents csv generator for  import investment using order history and pie information from Trading212",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "ts-node src/app.ts",
+    "dev": "nodemon --exec ts-node src/app.ts"
+  },
+  "keywords": [
+    "trading212",
+    "stockevents"
+  ],
+  "author": "akintola olalekan",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
