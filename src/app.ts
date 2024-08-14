@@ -1,5 +1,5 @@
 const express = require('express');
-import { Request, Response } from 'express'; 
+import type { Request, Response } from 'express'; 
 const { filterStocks, generateAllDataCSV } = require('./stockFilter');
 const dotenv = require('dotenv');
 const path = require('path');
